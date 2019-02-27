@@ -1,0 +1,164 @@
+schema {
+  query: RootQuery
+  mutation: RootMutation
+}
+
+type Cast {
+  id: ID
+  person: Person
+  character: Person
+}
+
+"""
+A date string, such as 2007-12-03, compliant with the `full-date` format
+outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for
+representation of dates and times using the Gregorian calendar.
+"""
+scalar Date
+
+"""Episodes of the tv show"""
+type Episode {
+  id: ID
+  image: TvHelperImage
+  name: String
+  season: Int
+  number: Int
+
+  """Gives season and episode number on format S01E01"""
+  seasonAndNumber: String
+  airdate: Date
+  summary(stripTags: Boolean = true): String
+  watched: Boolean
+}
+
+type LoginType {
+  token: String
+  success: Boolean
+}
+
+type MarkAsWatched {
+  success: Boolean
+}
+
+"""Information about pagination in a connection."""
+type PageInfo {
+  """When paginating forwards, are there more items?"""
+  hasNextPage: Boolean!
+
+  """When paginating backwards, are there more items?"""
+  hasPreviousPage: Boolean!
+
+  """When paginating backwards, the cursor to continue."""
+  startCursor: String
+
+  """When paginating forwards, the cursor to continue."""
+  endCursor: String
+}
+
+type Person {
+  id: ID
+  name: String
+  image: TvHelperImage
+}
+
+"""Root Mutation."""
+type RootMutation {
+  login(username: String!, password: String!): LoginType
+
+  """Mark an episode as watched"""
+  markAsWatched(episodeId: ID!): MarkAsWatched
+
+  """Toggle tv show from favorite list"""
+  toggleFavorite(serieId: ID!, add: Boolean!): ToggleFavorite
+  tvHelperLogin(username: String!, password: String!): LoginType
+}
+
+"""Root Query"""
+type RootQuery {
+  """Load episode by id"""
+  episode(id: ID!): Episode
+
+  """Get your favorites"""
+  favorites(after: String, first: Int, before: String, last: Int, options: SortOptions = {sortDirection: ASC, sortBy: NAME}): TvShowConnection
+
+  """Search for tv shows by name"""
+  searchTvShow(query: String!, after: String, first: Int, before: String, last: Int): TvShowConnection
+
+  """Tv show lookup by id"""
+  tvShowDetail(id: ID!): TvShow
+
+  """Test"""
+  test: TestType
+}
+
+enum SortBy {
+  NAME
+  NEXT_EPISODE
+  PREVIOUS_EPISODE
+  STATUS
+}
+
+enum SortDirection {
+  ASC
+  DESC
+}
+
+input SortOptions {
+  sortDirection: SortDirection = ASC
+  sortBy: SortBy = NAME
+}
+
+"""Test"""
+type TestType {
+  id: ID
+  test: String
+}
+
+type ToggleFavorite {
+  success: Boolean
+  serieId: ID
+  tvShow: TvShowNode
+}
+
+type TvHelperImage {
+  id: ID
+  original: String
+  medium: String
+}
+
+type TvShow {
+  id: ID
+  name: String
+  status: String
+  premiered: Date
+  rating: Float
+  image: TvHelperImage
+  summary(stripTags: Boolean = true): String
+  isFavorite: Boolean
+  episodes: [Episode]
+  previousEpisode: Date
+  nextEpisode: Date
+  cast: [Cast]
+}
+
+"""A connection to a list of items."""
+type TvShowConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [TvShowEdge]
+}
+
+"""An edge in a connection."""
+type TvShowEdge {
+  """The item at the end of the edge"""
+  node: TvShow
+
+  """A cursor for use in pagination"""
+  cursor: String!
+}
+
+type TvShowNode {
+  node: TvShow
+}

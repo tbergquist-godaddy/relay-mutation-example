@@ -1,0 +1,36 @@
+[ignore]
+
+[untyped]
+<PROJECT_ROOT>/node_modules/graphql-relay/lib/connection/connection.js
+<PROJECT_ROOT>/node_modules/graphql-relay/lib/node/node.js
+<PROJECT_ROOT>/node_modules/graphql-relay/lib/mutation/mutation.js
+
+[include]
+
+[libs]
+./flow-typed
+
+[options]
+include_warnings=true
+
+; This option lets you alias 'any' with a given string - useful for explaining why you’re using 'any'
+suppress_type=$FlowFixMe
+
+; See: https://github.com/facebook/flow/issues/2692 (dangerous because of `any` so not disabled by default)
+suppress_comment=\\(.\\|\n\\)*\\$FlowAllowDynamicImport
+suppress_comment=\\(.\\|\n\\)*\\$FlowExpectedError: .+
+suppress_comment=\\(.\\|\n\\)*\\$FlowIssue: https://github.com/facebook/flow/issues/[0-9]+
+suppress_comment=\\(.\\|\n\\)*\\$FlowPullRequest: https://github.com/facebook/flow/pull/[0-9]+
+
+; Following suppress comments are added only to make it compatible with FB codebase. PLEASE DO NOT USE:
+suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe\\($\\|[^(]\\|(\\(<VERSION>\\)?)\\)
+
+esproposal.optional_chaining=enable
+esproposal.nullish_coalescing=enable
+
+module.system.node.resolve_dirname=node_modules
+module.system.node.resolve_dirname=./src/apps/relay-example
+
+[lints]
+unnecessary-optional-chain=error
+unnecessary-invariant=error
