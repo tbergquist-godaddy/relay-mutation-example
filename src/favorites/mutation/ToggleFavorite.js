@@ -2,7 +2,6 @@
 
 import { graphql, commitMutation } from 'react-relay';
 
-import Environment from '../../Environment';
 import type { ToggleFavoriteMutationVariables } from './__generated__/ToggleFavoriteMutation.graphql';
 
 const mutation = graphql`
@@ -48,10 +47,11 @@ const configs = [
 ];
 
 const toggle = (
+  environment: $FlowFixMe, // TODO: expose from '@kiwicom/relay'
   { serieId, add }: ToggleFavoriteMutationVariables,
   onCompleted: ?() => void,
 ) => {
-  commitMutation(Environment, {
+  commitMutation(environment, {
     mutation,
     variables: { serieId, add },
     onCompleted,
