@@ -7,7 +7,7 @@ import token from './token';
 const environment = createEnvironment({
   fetcherFn: createNetworkFetcher('https://tbergq-graphql.now.sh/graphql/', {
     Authorization: token,
-    'X-Client': 'lolTest',
+    'X-Client': 'relay-mutation-example',
   }),
 });
 
