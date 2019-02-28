@@ -986,6 +986,14 @@
     "@kiwicom/js" "^0.3.0"
     cross-fetch "^3.0.0"
 
+"@kiwicom/fetch@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@kiwicom/fetch/-/fetch-2.2.0.tgz#190d9352f299c8fbe7b12b5bece9469684c2eeed"
+  integrity sha512-7B49i+td2r/S0jm1jhTKzK+a5/KDFTvKdmgmgY1XQDcOaBgWGmlhSv/YmkT2wbjHDE6uxv5tzU0kYrc/sbrWew==
+  dependencies:
+    "@kiwicom/js" "^0.4.0"
+    cross-fetch "^3.0.0"
+
 "@kiwicom/js@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@kiwicom/js/-/js-0.3.0.tgz#67b0f24e13f4e13c0e53ed908895660d104b70ff"
@@ -4723,7 +4731,7 @@ nice-try@^1.0.4:
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
   integrity sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==
 
-node-fetch@2.3.0, node-fetch@^2.3.0:
+node-fetch@2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.3.0.tgz#1a1d940bbfb916a1d3e0219f037e89e71f8c5fa5"
   integrity sha512-MOd8pV3fxENbryESLgVIeaGKrdl+uaYhCSSVkjeOb/31/njTpcis5aWfdqgNlHIrKOLRbMnfPINPOML2CIFeXA==

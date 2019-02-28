@@ -2,7 +2,7 @@
 
 import fs from 'fs';
 import path from 'path';
-import fetch from 'node-fetch';
+import fetch from '@kiwicom/fetch';
 import {
   buildClientSchema,
   getIntrospectionQuery,
