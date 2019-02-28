@@ -5,6 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "@kiwicom/eslint-config": "^3.1.0",
+    "@kiwicom/fetch": "^2.2.0",
     "@kiwicom/orbit-components": "^0.33.0",
     "@kiwicom/relay": "0.17.0",
     "babel-eslint": "^10.0.1",
@@ -12,7 +13,6 @@
     "flow-bin": "^0.93.0",
     "graphql": "^14.1.1",
     "next": "^8.0.3",
-    "node-fetch": "^2.3.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-relay": "^3.0.0",
