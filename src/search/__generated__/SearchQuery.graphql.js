@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 88256c2998148969ee5e175b5f3442ab
+ * @relayHash 4c70835ddb7af29de7f74a167da554b1
  */
 
 /* eslint-disable */
@@ -9,13 +9,13 @@
 
 /*::
 import type { ConcreteRequest } from 'relay-runtime';
-type SearchList$ref = any;
+type SearchList_data$ref = any;
 export type SearchQueryVariables = {|
   query: string
 |};
 export type SearchQueryResponse = {|
   +searchTvShow: ?{|
-    +$fragmentRefs: SearchList$ref
+    +$fragmentRefs: SearchList_data$ref
   |}
 |};
 export type SearchQuery = {|
@@ -30,20 +30,20 @@ query SearchQuery(
   $query: String!
 ) {
   searchTvShow(query: $query) {
-    ...SearchList
+    ...SearchList_data
   }
 }
 
-fragment SearchList on TvShowConnection {
+fragment SearchList_data on TvShowConnection {
   edges {
     node {
       id
-      ...TvShowItem
+      ...TvShowItem_data
     }
   }
 }
 
-fragment TvShowItem on TvShow {
+fragment TvShowItem_data on TvShow {
   id
   name
   isFavorite
@@ -87,7 +87,7 @@ return {
         "selections": [
           {
             "kind": "FragmentSpread",
-            "name": "SearchList",
+            "name": "SearchList_data",
             "args": null
           }
         ]
@@ -159,11 +159,11 @@ return {
     "operationKind": "query",
     "name": "SearchQuery",
     "id": null,
-    "text": "query SearchQuery(\n  $query: String!\n) {\n  searchTvShow(query: $query) {\n    ...SearchList\n  }\n}\n\nfragment SearchList on TvShowConnection {\n  edges {\n    node {\n      id\n      ...TvShowItem\n    }\n  }\n}\n\nfragment TvShowItem on TvShow {\n  id\n  name\n  isFavorite\n}\n",
+    "text": "query SearchQuery(\n  $query: String!\n) {\n  searchTvShow(query: $query) {\n    ...SearchList_data\n  }\n}\n\nfragment SearchList_data on TvShowConnection {\n  edges {\n    node {\n      id\n      ...TvShowItem_data\n    }\n  }\n}\n\nfragment TvShowItem_data on TvShow {\n  id\n  name\n  isFavorite\n}\n",
     "metadata": {}
   }
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = '5d3eec6570e327af77ad103e4aa863bb';
+(node/*: any*/).hash = 'e57ea29e47ee447306687cdba0c5e7dd';
 module.exports = node;

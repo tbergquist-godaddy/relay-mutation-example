@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { createFragmentContainer, graphql } from '@kiwicom/relay';
 
-import type { TvShowItem as TvShowItemType } from './__generated__/TvShowItem.graphql';
+import type { TvShowItem_data as TvShowItemType } from './__generated__/TvShowItem_data.graphql';
 import ToggleFavorite from '../favorites/mutation/ToggleFavorite';
 
 type Props = {|
@@ -25,13 +25,12 @@ const TvShowItem = (props: Props) => {
     </div>
   );
 };
-export default createFragmentContainer(
-  TvShowItem,
-  graphql`
-    fragment TvShowItem on TvShow {
+export default createFragmentContainer(TvShowItem, {
+  data: graphql`
+    fragment TvShowItem_data on TvShow {
       id
       name
       isFavorite
     }
   `,
-);
+});

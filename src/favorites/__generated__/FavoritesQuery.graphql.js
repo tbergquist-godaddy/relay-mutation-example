@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash dedaf634ae43b9848ec0cdf1568fa24d
+ * @relayHash cdab3f6e551a13087406576585680d92
  */
 
 /* eslint-disable */
@@ -9,7 +9,7 @@
 
 /*::
 import type { ConcreteRequest } from 'relay-runtime';
-type FavoritesList$ref = any;
+type FavoritesList_data$ref = any;
 export type SortBy = "NAME" | "NEXT_EPISODE" | "PREVIOUS_EPISODE" | "STATUS" | "%future added value";
 export type SortDirection = "ASC" | "DESC" | "%future added value";
 export type SortOptions = {|
@@ -21,7 +21,7 @@ export type FavoritesQueryVariables = {|
   options?: ?SortOptions,
 |};
 export type FavoritesQueryResponse = {|
-  +$fragmentRefs: FavoritesList$ref
+  +$fragmentRefs: FavoritesList_data$ref
 |};
 export type FavoritesQuery = {|
   variables: FavoritesQueryVariables,
@@ -32,15 +32,15 @@ export type FavoritesQuery = {|
 
 /*
 query FavoritesQuery {
-  ...FavoritesList
+  ...FavoritesList_data
 }
 
-fragment FavoritesList on RootQuery {
+fragment FavoritesList_data on RootQuery {
   favorites(options: {sortDirection: ASC, sortBy: NAME}) {
     edges {
       node {
         id
-        ...FavoritesItem
+        ...FavoritesItem_data
         __typename
       }
       cursor
@@ -52,7 +52,7 @@ fragment FavoritesList on RootQuery {
   }
 }
 
-fragment FavoritesItem on TvShow {
+fragment FavoritesItem_data on TvShow {
   name
   image {
     medium
@@ -108,7 +108,7 @@ return {
     "selections": [
       {
         "kind": "FragmentSpread",
-        "name": "FavoritesList",
+        "name": "FavoritesList_data",
         "args": null
       }
     ]
@@ -253,11 +253,11 @@ return {
     "operationKind": "query",
     "name": "FavoritesQuery",
     "id": null,
-    "text": "query FavoritesQuery {\n  ...FavoritesList\n}\n\nfragment FavoritesList on RootQuery {\n  favorites(options: {sortDirection: ASC, sortBy: NAME}) {\n    edges {\n      node {\n        id\n        ...FavoritesItem\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n}\n\nfragment FavoritesItem on TvShow {\n  name\n  image {\n    medium\n    id\n  }\n  previousEpisode\n  nextEpisode\n  status\n}\n",
+    "text": "query FavoritesQuery {\n  ...FavoritesList_data\n}\n\nfragment FavoritesList_data on RootQuery {\n  favorites(options: {sortDirection: ASC, sortBy: NAME}) {\n    edges {\n      node {\n        id\n        ...FavoritesItem_data\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n}\n\nfragment FavoritesItem_data on TvShow {\n  name\n  image {\n    medium\n    id\n  }\n  previousEpisode\n  nextEpisode\n  status\n}\n",
     "metadata": {}
   }
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = 'a703d31e64792adf90dbbc1b6a794d82';
+(node/*: any*/).hash = 'b73dc4526ea657415ed12c36090f0341';
 module.exports = node;

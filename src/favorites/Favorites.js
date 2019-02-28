@@ -19,7 +19,7 @@ export default class Favorites extends React.Component<Props> {
       <QueryRenderer
         query={graphql`
           query FavoritesQuery($first: Int, $options: SortOptions) {
-            ...FavoritesList
+            ...FavoritesList_data
           }
         `}
         render={this.renderInner}

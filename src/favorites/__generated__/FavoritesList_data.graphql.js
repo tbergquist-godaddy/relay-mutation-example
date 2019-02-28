@@ -8,26 +8,26 @@
 
 /*::
 import type { ReaderFragment } from 'relay-runtime';
-type FavoritesItem$ref = any;
+type FavoritesItem_data$ref = any;
 import type { FragmentReference } from "relay-runtime";
-declare export opaque type FavoritesList$ref: FragmentReference;
-export type FavoritesList = {|
+declare export opaque type FavoritesList_data$ref: FragmentReference;
+export type FavoritesList_data = {|
   +favorites: ?{|
     +edges: ?$ReadOnlyArray<?{|
       +node: ?{|
         +id: ?string,
-        +$fragmentRefs: FavoritesItem$ref,
+        +$fragmentRefs: FavoritesItem_data$ref,
       |}
     |}>
   |},
-  +$refType: FavoritesList$ref,
+  +$refType: FavoritesList_data$ref,
 |};
 */
 
 
 const node/*: ReaderFragment*/ = {
   "kind": "Fragment",
-  "name": "FavoritesList",
+  "name": "FavoritesList_data",
   "type": "RootQuery",
   "metadata": {
     "connection": [
@@ -95,7 +95,7 @@ const node/*: ReaderFragment*/ = {
                 },
                 {
                   "kind": "FragmentSpread",
-                  "name": "FavoritesItem",
+                  "name": "FavoritesItem_data",
                   "args": null
                 },
                 {
@@ -146,5 +146,5 @@ const node/*: ReaderFragment*/ = {
   ]
 };
 // prettier-ignore
-(node/*: any*/).hash = '9e284a255ba1e9149f2585098b8d5339';
+(node/*: any*/).hash = 'f439ee171d530e1705e0dd9d714be7b9';
 module.exports = node;

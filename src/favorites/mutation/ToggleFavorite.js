@@ -13,7 +13,7 @@ const mutation = graphql`
       tvShow {
         node {
           id
-          ...FavoritesItem
+          ...FavoritesItem_data
         }
       }
     }
