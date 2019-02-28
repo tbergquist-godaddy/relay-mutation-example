@@ -1,7 +1,5 @@
 // @flow strict
 
-/* eslint-disable relay/unused-fields */
-
 import * as React from 'react';
 import {
   createRefetchContainer,

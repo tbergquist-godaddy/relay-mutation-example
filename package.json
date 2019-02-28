@@ -23,7 +23,7 @@
   },
   "scripts": {
     "start": "next",
-    "lint": "yarn eslint .",
+    "lint": "yarn eslint --report-unused-disable-directives .",
     "relay": "yarn relay-compiler --src ./src --schema ./schema.graphql",
     "graphql": "yarn babel-node scripts/getSchema.js"
   },
