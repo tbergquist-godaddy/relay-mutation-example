@@ -1,16 +1,27 @@
 // @flow
 
 import * as React from 'react';
-import { QueryRenderer as OriginalQueryRenderer } from '@kiwicom/relay';
+import {
+  createEnvironment,
+  createNetworkFetcher,
+  QueryRenderer as OriginalQueryRenderer,
+} from '@kiwicom/relay';
 import type { GraphQLTaggedNode } from 'react-relay';
 
-import environment from './Environment';
+import token from './token';
 
 type Props = {|
   +query: GraphQLTaggedNode,
   +render: (props: Object) => React.Element<any>,
   +variables?: Object,
 |};
+
+const environment = createEnvironment({
+  fetcherFn: createNetworkFetcher('https://tbergq-graphql.now.sh/graphql/', {
+    Authorization: token,
+    'X-Client': 'relay-mutation-example',
+  }),
+});
 
 export default class QueryRenderer extends React.Component<Props> {
   render() {

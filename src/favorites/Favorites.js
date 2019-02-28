@@ -1,7 +1,7 @@
 // @flow strict
 
 import * as React from 'react';
-import { graphql } from 'react-relay';
+import { graphql } from '@kiwicom/relay';
 
 import QueryRenderer from '../QueryRenderer';
 import type { FavoritesQueryResponse } from './__generated__/FavoritesQuery.graphql';

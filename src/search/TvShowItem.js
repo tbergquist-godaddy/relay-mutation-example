@@ -8,10 +8,11 @@ import ToggleFavorite from '../favorites/mutation/ToggleFavorite';
 
 type Props = {|
   +data: ?TvShowItemType,
+  +relay: $FlowFixMe, // TODO: expose from '@kiwicom/relay'
 |};
 const TvShowItem = (props: Props) => {
   function onClick() {
-    ToggleFavorite({
+    ToggleFavorite(props.relay.environment, {
       serieId: props.data?.id ?? '',
       add: !props.data?.isFavorite,
     });
