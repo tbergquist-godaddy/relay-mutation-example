@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 22ee940c566914d5cab0ece3f7fb6055
+ * @relayHash daff98493f0a65cc107995ba660c11f2
  */
 
 /* eslint-disable */
@@ -9,7 +9,7 @@
 
 /*::
 import type { ConcreteRequest } from 'relay-runtime';
-type FavoritesList$ref = any;
+type FavoritesList_data$ref = any;
 export type SortBy = "NAME" | "NEXT_EPISODE" | "PREVIOUS_EPISODE" | "STATUS" | "%future added value";
 export type SortDirection = "ASC" | "DESC" | "%future added value";
 export type SortOptions = {|
@@ -21,7 +21,7 @@ export type FavoritesListRefetchQueryVariables = {|
   options?: ?SortOptions,
 |};
 export type FavoritesListRefetchQueryResponse = {|
-  +$fragmentRefs: FavoritesList$ref
+  +$fragmentRefs: FavoritesList_data$ref
 |};
 export type FavoritesListRefetchQuery = {|
   variables: FavoritesListRefetchQueryVariables,
@@ -35,15 +35,15 @@ query FavoritesListRefetchQuery(
   $first: Int
   $options: SortOptions
 ) {
-  ...FavoritesList_42u0Wi
+  ...FavoritesList_data_42u0Wi
 }
 
-fragment FavoritesList_42u0Wi on RootQuery {
+fragment FavoritesList_data_42u0Wi on RootQuery {
   favorites(first: $first, options: $options) {
     edges {
       node {
         id
-        ...FavoritesItem
+        ...FavoritesItem_data
         __typename
       }
       cursor
@@ -55,7 +55,7 @@ fragment FavoritesList_42u0Wi on RootQuery {
   }
 }
 
-fragment FavoritesItem on TvShow {
+fragment FavoritesItem_data on TvShow {
   name
   image {
     medium
@@ -114,7 +114,7 @@ return {
     "selections": [
       {
         "kind": "FragmentSpread",
-        "name": "FavoritesList",
+        "name": "FavoritesList_data",
         "args": [
           {
             "kind": "Variable",
@@ -272,11 +272,11 @@ return {
     "operationKind": "query",
     "name": "FavoritesListRefetchQuery",
     "id": null,
-    "text": "query FavoritesListRefetchQuery(\n  $first: Int\n  $options: SortOptions\n) {\n  ...FavoritesList_42u0Wi\n}\n\nfragment FavoritesList_42u0Wi on RootQuery {\n  favorites(first: $first, options: $options) {\n    edges {\n      node {\n        id\n        ...FavoritesItem\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n}\n\nfragment FavoritesItem on TvShow {\n  name\n  image {\n    medium\n    id\n  }\n  previousEpisode\n  nextEpisode\n  status\n}\n",
+    "text": "query FavoritesListRefetchQuery(\n  $first: Int\n  $options: SortOptions\n) {\n  ...FavoritesList_data_42u0Wi\n}\n\nfragment FavoritesList_data_42u0Wi on RootQuery {\n  favorites(first: $first, options: $options) {\n    edges {\n      node {\n        id\n        ...FavoritesItem_data\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n}\n\nfragment FavoritesItem_data on TvShow {\n  name\n  image {\n    medium\n    id\n  }\n  previousEpisode\n  nextEpisode\n  status\n}\n",
     "metadata": {}
   }
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = 'c52805dd17be4b352a35302bdc55b59b';
+(node/*: any*/).hash = '59e24044a66a986c9f1c1e2bb2fd9305';
 module.exports = node;

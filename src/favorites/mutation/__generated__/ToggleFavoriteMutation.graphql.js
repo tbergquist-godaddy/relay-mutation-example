@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash d6fb98a3753e6efff9422c621e35d2ca
+ * @relayHash 1161088b7b4e8526fedd3c6dd40bae9a
  */
 
 /* eslint-disable */
@@ -9,7 +9,7 @@
 
 /*::
 import type { ConcreteRequest } from 'relay-runtime';
-type FavoritesItem$ref = any;
+type FavoritesItem_data$ref = any;
 export type ToggleFavoriteMutationVariables = {|
   serieId: string,
   add: boolean,
@@ -21,7 +21,7 @@ export type ToggleFavoriteMutationResponse = {|
     +tvShow: ?{|
       +node: ?{|
         +id: ?string,
-        +$fragmentRefs: FavoritesItem$ref,
+        +$fragmentRefs: FavoritesItem_data$ref,
       |}
     |},
   |}
@@ -44,13 +44,13 @@ mutation ToggleFavoriteMutation(
     tvShow {
       node {
         id
-        ...FavoritesItem
+        ...FavoritesItem_data
       }
     }
   }
 }
 
-fragment FavoritesItem on TvShow {
+fragment FavoritesItem_data on TvShow {
   name
   image {
     medium
@@ -153,7 +153,7 @@ return {
                   (v4/*: any*/),
                   {
                     "kind": "FragmentSpread",
-                    "name": "FavoritesItem",
+                    "name": "FavoritesItem_data",
                     "args": null
                   }
                 ]
@@ -258,11 +258,11 @@ return {
     "operationKind": "mutation",
     "name": "ToggleFavoriteMutation",
     "id": null,
-    "text": "mutation ToggleFavoriteMutation(\n  $serieId: ID!\n  $add: Boolean!\n) {\n  toggleFavorite(serieId: $serieId, add: $add) {\n    success\n    serieId\n    tvShow {\n      node {\n        id\n        ...FavoritesItem\n      }\n    }\n  }\n}\n\nfragment FavoritesItem on TvShow {\n  name\n  image {\n    medium\n    id\n  }\n  previousEpisode\n  nextEpisode\n  status\n}\n",
+    "text": "mutation ToggleFavoriteMutation(\n  $serieId: ID!\n  $add: Boolean!\n) {\n  toggleFavorite(serieId: $serieId, add: $add) {\n    success\n    serieId\n    tvShow {\n      node {\n        id\n        ...FavoritesItem_data\n      }\n    }\n  }\n}\n\nfragment FavoritesItem_data on TvShow {\n  name\n  image {\n    medium\n    id\n  }\n  previousEpisode\n  nextEpisode\n  status\n}\n",
     "metadata": {}
   }
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = '6574cc9f54d9aad5330de6aab299f79e';
+(node/*: any*/).hash = '14aaa4a2b7911d4c2a06b4ae33e6b0ca';
 module.exports = node;

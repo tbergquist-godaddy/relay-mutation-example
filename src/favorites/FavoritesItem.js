@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { createFragmentContainer, graphql } from '@kiwicom/relay';
 
-import type { FavoritesItem as FavoritesType } from './__generated__/FavoritesItem.graphql';
+import type { FavoritesItem_data as FavoritesType } from './__generated__/FavoritesItem_data.graphql';
 
 type Props = {|
   +data: ?FavoritesType,
@@ -55,10 +55,9 @@ const styles = {
   },
 };
 
-export default createFragmentContainer(
-  FavoritesItem,
-  graphql`
-    fragment FavoritesItem on TvShow {
+export default createFragmentContainer(FavoritesItem, {
+  data: graphql`
+    fragment FavoritesItem_data on TvShow {
       name
       image {
         medium
@@ -68,4 +67,4 @@ export default createFragmentContainer(
       status
     }
   `,
-);
+});

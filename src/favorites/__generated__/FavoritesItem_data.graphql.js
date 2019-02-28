@@ -9,8 +9,8 @@
 /*::
 import type { ReaderFragment } from 'relay-runtime';
 import type { FragmentReference } from "relay-runtime";
-declare export opaque type FavoritesItem$ref: FragmentReference;
-export type FavoritesItem = {|
+declare export opaque type FavoritesItem_data$ref: FragmentReference;
+export type FavoritesItem_data = {|
   +name: ?string,
   +image: ?{|
     +medium: ?string
@@ -18,14 +18,14 @@ export type FavoritesItem = {|
   +previousEpisode: ?any,
   +nextEpisode: ?any,
   +status: ?string,
-  +$refType: FavoritesItem$ref,
+  +$refType: FavoritesItem_data$ref,
 |};
 */
 
 
 const node/*: ReaderFragment*/ = {
   "kind": "Fragment",
-  "name": "FavoritesItem",
+  "name": "FavoritesItem_data",
   "type": "TvShow",
   "metadata": null,
   "argumentDefinitions": [],
@@ -79,5 +79,5 @@ const node/*: ReaderFragment*/ = {
   ]
 };
 // prettier-ignore
-(node/*: any*/).hash = '14d91476d4bd26d088f75c6f59bcdb29';
+(node/*: any*/).hash = '32aa3a501a3d08081027ec470ee851f2';
 module.exports = node;

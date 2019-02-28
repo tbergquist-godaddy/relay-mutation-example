@@ -21,7 +21,7 @@ export default function SearchQuery({ query }: Props) {
       query={graphql`
         query SearchQuery($query: String!) {
           searchTvShow(query: $query) {
-            ...SearchList
+            ...SearchList_data
           }
         }
       `}

@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { graphql, createFragmentContainer } from '@kiwicom/relay';
 
-import type { SearchList as SearchResults } from './__generated__/SearchList.graphql';
+import type { SearchList_data as SearchResults } from './__generated__/SearchList_data.graphql';
 import TvShowItem from './TvShowItem';
 
 type Props = {|
@@ -23,16 +23,15 @@ class SearchList extends React.Component<Props> {
   }
 }
 
-export default createFragmentContainer(
-  SearchList,
-  graphql`
-    fragment SearchList on TvShowConnection {
+export default createFragmentContainer(SearchList, {
+  data: graphql`
+    fragment SearchList_data on TvShowConnection {
       edges {
         node {
           id
-          ...TvShowItem
+          ...TvShowItem_data
         }
       }
     }
   `,
-);
+});
