@@ -12,6 +12,7 @@ const mutation = graphql`
       serieId
       tvShow {
         node {
+          id
           ...FavoritesItem
         }
       }
@@ -48,7 +49,7 @@ const configs = [
 
 const toggle = (
   { serieId, add }: ToggleFavoriteMutationVariables,
-  onCompleted: () => void,
+  onCompleted: ?() => void,
 ) => {
   commitMutation(Environment, {
     mutation,

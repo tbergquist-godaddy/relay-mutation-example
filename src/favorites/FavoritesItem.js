@@ -6,19 +6,19 @@ import { createFragmentContainer, graphql } from '@kiwicom/relay';
 import type { FavoritesItem as FavoritesType } from './__generated__/FavoritesItem.graphql';
 
 type Props = {|
-  +data: FavoritesType,
+  +data: ?FavoritesType,
 |};
 
 class FavoritesItem extends React.Component<Props> {
   render() {
-    const nextEpisode = this.props.data.nextEpisode ?? 'N/A';
-    const previousEpisode = this.props.data.previousEpisode ?? 'N/A';
-    const name = this.props.data.name ?? '';
-    const status = this.props.data.status ?? '';
+    const nextEpisode = this.props.data?.nextEpisode ?? 'N/A';
+    const previousEpisode = this.props.data?.previousEpisode ?? 'N/A';
+    const name = this.props.data?.name ?? '';
+    const status = this.props.data?.status ?? '';
     return (
       <div>
         <div style={styles.container}>
-          <img src={this.props.data.image?.medium} alt={`${name} image`} />
+          <img src={this.props.data?.image?.medium} alt={`${name} image`} />
           <div style={styles.content}>
             <div>{`${name} - ${status}`}</div>
             <div>{`Next episode: ${nextEpisode}`}</div>
@@ -59,7 +59,6 @@ export default createFragmentContainer(
   FavoritesItem,
   graphql`
     fragment FavoritesItem on TvShow {
-      id
       name
       image {
         medium

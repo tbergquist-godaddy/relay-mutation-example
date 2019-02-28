@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash b8020e1d7463193fe73cb04cba1861b4
+ * @relayHash 22ee940c566914d5cab0ece3f7fb6055
  */
 
 /* eslint-disable */
@@ -56,7 +56,6 @@ fragment FavoritesList_42u0Wi on RootQuery {
 }
 
 fragment FavoritesItem on TvShow {
-  id
   name
   image {
     medium
@@ -273,7 +272,7 @@ return {
     "operationKind": "query",
     "name": "FavoritesListRefetchQuery",
     "id": null,
-    "text": "query FavoritesListRefetchQuery(\n  $first: Int\n  $options: SortOptions\n) {\n  ...FavoritesList_42u0Wi\n}\n\nfragment FavoritesList_42u0Wi on RootQuery {\n  favorites(first: $first, options: $options) {\n    edges {\n      node {\n        id\n        ...FavoritesItem\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n}\n\nfragment FavoritesItem on TvShow {\n  id\n  name\n  image {\n    medium\n    id\n  }\n  previousEpisode\n  nextEpisode\n  status\n}\n",
+    "text": "query FavoritesListRefetchQuery(\n  $first: Int\n  $options: SortOptions\n) {\n  ...FavoritesList_42u0Wi\n}\n\nfragment FavoritesList_42u0Wi on RootQuery {\n  favorites(first: $first, options: $options) {\n    edges {\n      node {\n        id\n        ...FavoritesItem\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n}\n\nfragment FavoritesItem on TvShow {\n  name\n  image {\n    medium\n    id\n  }\n  previousEpisode\n  nextEpisode\n  status\n}\n",
     "metadata": {}
   }
 };

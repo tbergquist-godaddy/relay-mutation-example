@@ -4,13 +4,13 @@ import * as React from 'react';
 import { graphql } from 'react-relay';
 
 import QueryRenderer from '../QueryRenderer';
-import type { FavoritesSceneQueryResponse } from './__generated__/FavoritesSceneQuery.graphql';
+import type { FavoritesQueryResponse } from './__generated__/FavoritesQuery.graphql';
 import FavoritesList from './FavoritesList';
 
 type Props = {||};
 
 export default class Favorites extends React.Component<Props> {
-  renderInner = (props: FavoritesSceneQueryResponse) => {
+  renderInner = (props: FavoritesQueryResponse) => {
     return <FavoritesList data={props} />;
   };
 

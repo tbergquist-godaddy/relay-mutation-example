@@ -11,15 +11,10 @@ type Props = {|
 |};
 const TvShowItem = (props: Props) => {
   function onClick() {
-    ToggleFavorite(
-      {
-        serieId: props.data?.id,
-        add: !props.data?.isFavorite,
-      },
-      () => {
-        console.log('ait');
-      },
-    );
+    ToggleFavorite({
+      serieId: props.data?.id ?? '',
+      add: !props.data?.isFavorite,
+    });
   }
   return (
     <div

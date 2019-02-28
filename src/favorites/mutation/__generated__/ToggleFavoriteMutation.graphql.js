@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash dae97990843bdff2c8950a471fa0e26d
+ * @relayHash d6fb98a3753e6efff9422c621e35d2ca
  */
 
 /* eslint-disable */
@@ -20,7 +20,8 @@ export type ToggleFavoriteMutationResponse = {|
     +serieId: ?string,
     +tvShow: ?{|
       +node: ?{|
-        +$fragmentRefs: FavoritesItem$ref
+        +id: ?string,
+        +$fragmentRefs: FavoritesItem$ref,
       |}
     |},
   |}
@@ -42,15 +43,14 @@ mutation ToggleFavoriteMutation(
     serieId
     tvShow {
       node {
-        ...FavoritesItem
         id
+        ...FavoritesItem
       }
     }
   }
 }
 
 fragment FavoritesItem on TvShow {
-  id
   name
   image {
     medium
@@ -150,6 +150,7 @@ return {
                 "concreteType": "TvShow",
                 "plural": false,
                 "selections": [
+                  (v4/*: any*/),
                   {
                     "kind": "FragmentSpread",
                     "name": "FavoritesItem",
@@ -257,11 +258,11 @@ return {
     "operationKind": "mutation",
     "name": "ToggleFavoriteMutation",
     "id": null,
-    "text": "mutation ToggleFavoriteMutation(\n  $serieId: ID!\n  $add: Boolean!\n) {\n  toggleFavorite(serieId: $serieId, add: $add) {\n    success\n    serieId\n    tvShow {\n      node {\n        ...FavoritesItem\n        id\n      }\n    }\n  }\n}\n\nfragment FavoritesItem on TvShow {\n  id\n  name\n  image {\n    medium\n    id\n  }\n  previousEpisode\n  nextEpisode\n  status\n}\n",
+    "text": "mutation ToggleFavoriteMutation(\n  $serieId: ID!\n  $add: Boolean!\n) {\n  toggleFavorite(serieId: $serieId, add: $add) {\n    success\n    serieId\n    tvShow {\n      node {\n        id\n        ...FavoritesItem\n      }\n    }\n  }\n}\n\nfragment FavoritesItem on TvShow {\n  name\n  image {\n    medium\n    id\n  }\n  previousEpisode\n  nextEpisode\n  status\n}\n",
     "metadata": {}
   }
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = '13e51c839213ad81ee19fd55c27bf94d';
+(node/*: any*/).hash = '6574cc9f54d9aad5330de6aab299f79e';
 module.exports = node;

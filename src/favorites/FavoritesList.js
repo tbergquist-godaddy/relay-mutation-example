@@ -6,15 +6,16 @@ import * as React from 'react';
 import {
   createRefetchContainer,
   graphql,
-  type RelayRefetchProp,
+  type RefetchRelayProp,
 } from '@kiwicom/relay';
+import Button from '@kiwicom/orbit-components/lib/Button';
 
 import type { FavoritesList as FavoritesListType } from './__generated__/FavoritesList.graphql';
 import FavoritesItem from './FavoritesItem';
 
 type Props = {|
-  +data: FavoritesListType,
-  +relay: RelayRefetchProp,
+  +data: ?FavoritesListType,
+  +relay: RefetchRelayProp,
 |};
 
 type State = {|
@@ -26,20 +27,19 @@ class FavoritesList extends React.Component<Props, State> {
     isRefreshing: false,
   };
 
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.isRefreshing) {
-      this.setState({ isRefreshing: false });
-    }
-  }
-
   onRefresh = () => {
     this.setState({ isRefreshing: true });
     this.props.relay.refetch(
       {
-        options: this.props.options,
+        options: {
+          sortDirection: 'ASC',
+          sortBy: 'NAME',
+        },
       },
       null,
-      null,
+      () => {
+        this.setState({ isRefreshing: false });
+      },
       { force: true },
     );
   };
@@ -49,9 +49,10 @@ class FavoritesList extends React.Component<Props, State> {
     return (
       <div style={styles.container}>
         {data.map(item => (
-          <FavoritesItem key={item.node.id} data={item.node} />
+          <FavoritesItem key={item?.node?.id} data={item?.node} />
         ))}
         {this.state.isRefreshing && 'loading....'}
+        <Button onClick={this.onRefresh}>Refresh</Button>
       </div>
     );
   }

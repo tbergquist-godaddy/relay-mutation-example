@@ -2,11 +2,12 @@
 
 import * as React from 'react';
 import { QueryRenderer as OriginalQueryRenderer } from '@kiwicom/relay';
+import type { GraphQLTaggedNode } from 'react-relay';
 
 import environment from './Environment';
 
 type Props = {|
-  +query: string,
+  +query: GraphQLTaggedNode,
   +render: (props: Object) => React.Element<any>,
   +variables?: Object,
 |};
