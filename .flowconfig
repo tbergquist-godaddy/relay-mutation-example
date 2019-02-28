@@ -1,14 +1,10 @@
 [ignore]
 
 [untyped]
-<PROJECT_ROOT>/node_modules/graphql-relay/lib/connection/connection.js
-<PROJECT_ROOT>/node_modules/graphql-relay/lib/node/node.js
-<PROJECT_ROOT>/node_modules/graphql-relay/lib/mutation/mutation.js
 
 [include]
 
 [libs]
-./flow-typed
 
 [options]
 include_warnings=true
@@ -27,9 +23,6 @@ suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe\\($\\|[^(]\\|(\\(<VERSION>\\)?)\\)
 
 esproposal.optional_chaining=enable
 esproposal.nullish_coalescing=enable
-
-module.system.node.resolve_dirname=node_modules
-module.system.node.resolve_dirname=./src/apps/relay-example
 
 [lints]
 unnecessary-optional-chain=error
