@@ -1,14 +1,18 @@
 // @flow
 
 import * as React from 'react';
-import { createFragmentContainer, graphql } from '@kiwicom/relay';
+import {
+  createFragmentContainer,
+  graphql,
+  type RelayProp,
+} from '@kiwicom/relay';
 
 import type { TvShowItem_data as TvShowItemType } from './__generated__/TvShowItem_data.graphql';
 import ToggleFavorite from '../favorites/mutation/ToggleFavorite';
 
 type Props = {|
   +data: ?TvShowItemType,
-  +relay: $FlowFixMe, // TODO: expose from '@kiwicom/relay'
+  +relay: RelayProp,
 |};
 const TvShowItem = (props: Props) => {
   function onClick() {

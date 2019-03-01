@@ -7,7 +7,7 @@
     "@kiwicom/eslint-config": "^3.1.0",
     "@kiwicom/fetch": "^2.2.0",
     "@kiwicom/orbit-components": "^0.33.0",
-    "@kiwicom/relay": "^0.19.0",
+    "@kiwicom/relay": "^0.21.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.14.1",
     "flow-bin": "^0.93.0",

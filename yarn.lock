@@ -978,14 +978,6 @@
     strip-ansi "^5.0.0"
     text-table "^0.2.0"
 
-"@kiwicom/fetch@^2.1.1":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@kiwicom/fetch/-/fetch-2.1.1.tgz#d6464a629693f9ae873b2980c548e80f5d5c008e"
-  integrity sha512-kv6p3zd1D73Ew5uEdmZdWPFLS/IiOsk+WNMtWV1ANz7O5t33y5+oY9QzKAcbOyzAy41Xczf9WREd+0w92reflA==
-  dependencies:
-    "@kiwicom/js" "^0.3.0"
-    cross-fetch "^3.0.0"
-
 "@kiwicom/fetch@^2.2.0":
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@kiwicom/fetch/-/fetch-2.2.0.tgz#190d9352f299c8fbe7b12b5bece9469684c2eeed"
@@ -993,11 +985,6 @@
   dependencies:
     "@kiwicom/js" "^0.4.0"
     cross-fetch "^3.0.0"
-
-"@kiwicom/js@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@kiwicom/js/-/js-0.3.0.tgz#67b0f24e13f4e13c0e53ed908895660d104b70ff"
-  integrity sha512-frHRiHuwwlqx/SSVpBXUO0Njf8GbU85B5SsTWJ9yXs16m0FkEXDAEE+TWAZKmdWB1OgvgH3OQJgBagA86qaSxg==
 
 "@kiwicom/js@^0.4.0":
   version "0.4.0"
@@ -1018,12 +1005,12 @@
   dependencies:
     ramda "^0.25.0"
 
-"@kiwicom/relay@^0.19.0":
-  version "0.19.0"
-  resolved "https://registry.yarnpkg.com/@kiwicom/relay/-/relay-0.19.0.tgz#91edf897ceabbc932a349a3f8641b0b32cae2b75"
-  integrity sha512-Z1cmyhUsQq5JKLt3BNPGfSjlGc9f6jxJneX9eNjlrqzcDS6qb+bYtUzdQZ/8Nn3WvymMYBx2q4RfJHIc6bRZ2w==
+"@kiwicom/relay@^0.21.0":
+  version "0.21.0"
+  resolved "https://registry.yarnpkg.com/@kiwicom/relay/-/relay-0.21.0.tgz#71109dbc4767306e7ebd660592ad1bf0175a1ee8"
+  integrity sha512-A5ENFZfv2o1S/BaVmuU7/iBGfIVpJ3IOY0oh4UwE07f1N7RGrOTWAgubmAU6THEiNXSWVkrDQVCVpnA7t0oKbA==
   dependencies:
-    "@kiwicom/fetch" "^2.1.1"
+    "@kiwicom/fetch" "^2.2.0"
     "@kiwicom/js" "^0.4.0"
     react-relay "^3.0.0"
     relay-compiler "^3.0.0"
