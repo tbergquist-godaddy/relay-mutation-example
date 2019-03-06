@@ -28,7 +28,7 @@ const configs = [
     connectionInfo: [
       {
         key: connectionKey,
-        rangeBehavior: 'append',
+        rangeBehavior: 'prepend',
       },
     ],
     edgeName: 'tvShow',
