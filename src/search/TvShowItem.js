@@ -5,6 +5,7 @@ import {
   createFragmentContainer,
   graphql,
   type RelayProp,
+  commitLocalUpdate,
 } from '@kiwicom/relay';
 
 import type { TvShowItem_data as TvShowItemType } from './__generated__/TvShowItem_data.graphql';
@@ -16,10 +17,24 @@ type Props = {|
 |};
 const TvShowItem = (props: Props) => {
   function onClick() {
-    ToggleFavorite(props.relay.environment, {
-      serieId: props.data?.id ?? '',
-      add: !props.data?.isFavorite,
-    });
+    ToggleFavorite(
+      props.relay.environment,
+      {
+        serieId: props.data?.id ?? '',
+        add: !props.data?.isFavorite,
+      },
+      () => {
+        commitLocalUpdate(props.relay.environment, store => {
+          const tvShowId = props.data?.id;
+          if (tvShowId == null) {
+            throw Error('No tv show id was found.');
+          }
+          // $FlowExpectedError: Flow type missing for store
+          const show = store.get(tvShowId);
+          show.setValue(!props.data?.isFavorite, 'isNew');
+        });
+      },
+    );
   }
   return (
     <div

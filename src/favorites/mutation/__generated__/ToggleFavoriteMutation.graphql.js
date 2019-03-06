@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 1161088b7b4e8526fedd3c6dd40bae9a
+ * @relayHash 296455000fd841ba4d5a638641c9a09f
  */
 
 /* eslint-disable */
@@ -51,6 +51,7 @@ mutation ToggleFavoriteMutation(
 }
 
 fragment FavoritesItem_data on TvShow {
+  id
   name
   image {
     medium
@@ -258,7 +259,7 @@ return {
     "operationKind": "mutation",
     "name": "ToggleFavoriteMutation",
     "id": null,
-    "text": "mutation ToggleFavoriteMutation(\n  $serieId: ID!\n  $add: Boolean!\n) {\n  toggleFavorite(serieId: $serieId, add: $add) {\n    success\n    serieId\n    tvShow {\n      node {\n        id\n        ...FavoritesItem_data\n      }\n    }\n  }\n}\n\nfragment FavoritesItem_data on TvShow {\n  name\n  image {\n    medium\n    id\n  }\n  previousEpisode\n  nextEpisode\n  status\n}\n",
+    "text": "mutation ToggleFavoriteMutation(\n  $serieId: ID!\n  $add: Boolean!\n) {\n  toggleFavorite(serieId: $serieId, add: $add) {\n    success\n    serieId\n    tvShow {\n      node {\n        id\n        ...FavoritesItem_data\n      }\n    }\n  }\n}\n\nfragment FavoritesItem_data on TvShow {\n  id\n  name\n  image {\n    medium\n    id\n  }\n  previousEpisode\n  nextEpisode\n  status\n}\n",
     "metadata": {}
   }
 };
