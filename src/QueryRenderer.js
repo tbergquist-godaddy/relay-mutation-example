@@ -17,7 +17,7 @@ type Props = {|
 |};
 
 const environment = createEnvironment({
-  fetcherFn: createNetworkFetcher('https://tbergq-graphql.now.sh/graphql/', {
+  fetchFn: createNetworkFetcher('https://tbergq-graphql.now.sh/graphql/', {
     Authorization: token,
     'X-Client': 'relay-mutation-example',
   }),

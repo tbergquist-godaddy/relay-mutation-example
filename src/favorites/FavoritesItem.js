@@ -24,9 +24,11 @@ const FavoritesItem = (props: Props) => {
           if (tvShowId == null) {
             throw Error('No tv show id was found.');
           }
-          // $FlowExpectedError: Flow type missing for store
+
           const favorite = store.get(tvShowId);
-          favorite.setValue(false, 'isNew');
+          if (favorite) {
+            favorite.setValue(false, 'isNew');
+          }
         });
       }, 3000);
     }
