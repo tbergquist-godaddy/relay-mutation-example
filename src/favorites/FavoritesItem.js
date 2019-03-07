@@ -1,44 +1,21 @@
 // @flow strict
 
 import * as React from 'react';
-import {
-  createFragmentContainer,
-  graphql,
-  commitLocalUpdate,
-  type RelayProp,
-} from '@kiwicom/relay';
+import { createFragmentContainer, graphql } from '@kiwicom/relay';
 
 import type { FavoritesItem_data as FavoritesType } from './__generated__/FavoritesItem_data.graphql';
 
 type Props = {|
   +data: ?FavoritesType,
-  +relay: RelayProp,
 |};
 
 const FavoritesItem = (props: Props) => {
-  React.useEffect(() => {
-    if (props.data?.isNew) {
-      setTimeout(() => {
-        commitLocalUpdate(props.relay.environment, store => {
-          const tvShowId = props.data?.id;
-          if (tvShowId == null) {
-            throw Error('No tv show id was found.');
-          }
-
-          const favorite = store.get(tvShowId);
-          if (favorite) {
-            favorite.setValue(false, 'isNew');
-          }
-        });
-      }, 3000);
-    }
-  });
   const nextEpisode = props.data?.nextEpisode ?? 'N/A';
   const previousEpisode = props.data?.previousEpisode ?? 'N/A';
   const name = props.data?.name ?? '';
   const status = props.data?.status ?? '';
   return (
-    <div style={props.data?.isNew ? styles.justAdded : {}}>
+    <div>
       <div style={styles.container}>
         <img src={props.data?.image?.medium} alt={`${name} image`} />
         <div style={styles.content}>
@@ -53,9 +30,6 @@ const FavoritesItem = (props: Props) => {
 };
 
 const styles = {
-  justAdded: {
-    border: '5px dotted deeppink',
-  },
   container: {
     marginBottom: 8,
     flexDirection: 'row',
@@ -82,7 +56,6 @@ const styles = {
 export default createFragmentContainer(FavoritesItem, {
   data: graphql`
     fragment FavoritesItem_data on TvShow {
-      id
       name
       image {
         medium
@@ -90,7 +63,6 @@ export default createFragmentContainer(FavoritesItem, {
       previousEpisode
       nextEpisode
       status
-      isNew
     }
   `,
 });

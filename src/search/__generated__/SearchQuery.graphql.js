@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 4c70835ddb7af29de7f74a167da554b1
+ * @relayHash e8794955da9e41377016282d38bf72c0
  */
 
 /* eslint-disable */
@@ -44,9 +44,7 @@ fragment SearchList_data on TvShowConnection {
 }
 
 fragment TvShowItem_data on TvShow {
-  id
   name
-  isFavorite
 }
 */
 
@@ -139,13 +137,6 @@ return {
                     "name": "name",
                     "args": null,
                     "storageKey": null
-                  },
-                  {
-                    "kind": "ScalarField",
-                    "alias": null,
-                    "name": "isFavorite",
-                    "args": null,
-                    "storageKey": null
                   }
                 ]
               }
@@ -159,7 +150,7 @@ return {
     "operationKind": "query",
     "name": "SearchQuery",
     "id": null,
-    "text": "query SearchQuery(\n  $query: String!\n) {\n  searchTvShow(query: $query) {\n    ...SearchList_data\n  }\n}\n\nfragment SearchList_data on TvShowConnection {\n  edges {\n    node {\n      id\n      ...TvShowItem_data\n    }\n  }\n}\n\nfragment TvShowItem_data on TvShow {\n  id\n  name\n  isFavorite\n}\n",
+    "text": "query SearchQuery(\n  $query: String!\n) {\n  searchTvShow(query: $query) {\n    ...SearchList_data\n  }\n}\n\nfragment SearchList_data on TvShowConnection {\n  edges {\n    node {\n      id\n      ...TvShowItem_data\n    }\n  }\n}\n\nfragment TvShowItem_data on TvShow {\n  name\n}\n",
     "metadata": {}
   }
 };
