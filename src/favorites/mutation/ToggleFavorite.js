@@ -1,6 +1,6 @@
 // @flow
 
-import { graphql, commitMutation } from 'react-relay';
+import { graphql, commitMutation } from '@kiwicom/relay';
 
 import type { ToggleFavoriteMutationVariables } from './__generated__/ToggleFavoriteMutation.graphql';
 
@@ -59,7 +59,10 @@ const toggle = (
     configs,
     updater: store => {
       const serie = store.get(serieId);
-      serie.setValue(add, 'isFavorite');
+
+      if (serie) {
+        serie.setValue(add, 'isFavorite');
+      }
     },
   });
 };
