@@ -986,6 +986,14 @@
     "@kiwicom/js" "^0.4.0"
     cross-fetch "^3.0.0"
 
+"@kiwicom/fetch@^2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@kiwicom/fetch/-/fetch-2.2.1.tgz#8e19b872ff17789dff369a8741c247caa3f1b233"
+  integrity sha512-A9V7Ph8va6Sr+CPQswJR5jQcsM+T/n1wwRbnHJ1I+mWQb4R9NyQk2dOidCvJLDtmUEf6uuLzB4gYzGBD1QXa2g==
+  dependencies:
+    "@kiwicom/js" "^0.4.0"
+    cross-fetch "^3.0.0"
+
 "@kiwicom/js@^0.4.0":
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/@kiwicom/js/-/js-0.4.0.tgz#d96f4efd84302b73fafdb5be3080651fd0ece40a"
@@ -1005,12 +1013,12 @@
   dependencies:
     ramda "^0.25.0"
 
-"@kiwicom/relay@^0.23.0":
-  version "0.23.0"
-  resolved "https://registry.yarnpkg.com/@kiwicom/relay/-/relay-0.23.0.tgz#387ab772867163ed48818694f74103444cd8f31e"
-  integrity sha512-80VP93+eoqhZc3o9guqz/nPSjKlx02LbXLiNyYZMFV1PxyCD8B09ORPz2ve80keu4YRXq+s+sQgd33NNyyUQnA==
+"@kiwicom/relay@^0.25.0":
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/@kiwicom/relay/-/relay-0.25.0.tgz#60c5a1228a42fb1f45f7bdeb223fd07d868c41fc"
+  integrity sha512-dolDSlB5PyCNDG1zRc9KXJl52kn0e/4zX7af+I160TXWw3PIiuMTapXWlj4hEMX0oGWbtliMNDUH/EZA1ycUNw==
   dependencies:
-    "@kiwicom/fetch" "^2.2.0"
+    "@kiwicom/fetch" "^2.2.1"
     "@kiwicom/js" "^0.4.0"
     react-relay "^3.0.0"
     relay-compiler "^3.0.0"
