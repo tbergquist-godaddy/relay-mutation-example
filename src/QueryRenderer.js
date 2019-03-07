@@ -6,12 +6,11 @@ import {
   createNetworkFetcher,
   QueryRenderer as OriginalQueryRenderer,
 } from '@kiwicom/relay';
-import type { GraphQLTaggedNode } from 'react-relay';
 
 import token from './token';
 
 type Props = {|
-  +query: GraphQLTaggedNode,
+  +query: $FlowFixMe,
   +render: (props: Object) => React.Element<any>,
   +variables?: Object,
 |};
