@@ -978,14 +978,6 @@
     strip-ansi "^5.0.0"
     text-table "^0.2.0"
 
-"@kiwicom/fetch@^2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@kiwicom/fetch/-/fetch-2.2.0.tgz#190d9352f299c8fbe7b12b5bece9469684c2eeed"
-  integrity sha512-7B49i+td2r/S0jm1jhTKzK+a5/KDFTvKdmgmgY1XQDcOaBgWGmlhSv/YmkT2wbjHDE6uxv5tzU0kYrc/sbrWew==
-  dependencies:
-    "@kiwicom/js" "^0.4.0"
-    cross-fetch "^3.0.0"
-
 "@kiwicom/fetch@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@kiwicom/fetch/-/fetch-2.2.1.tgz#8e19b872ff17789dff369a8741c247caa3f1b233"
@@ -1013,10 +1005,10 @@
   dependencies:
     ramda "^0.25.0"
 
-"@kiwicom/relay@^0.25.0":
-  version "0.25.0"
-  resolved "https://registry.yarnpkg.com/@kiwicom/relay/-/relay-0.25.0.tgz#60c5a1228a42fb1f45f7bdeb223fd07d868c41fc"
-  integrity sha512-dolDSlB5PyCNDG1zRc9KXJl52kn0e/4zX7af+I160TXWw3PIiuMTapXWlj4hEMX0oGWbtliMNDUH/EZA1ycUNw==
+"@kiwicom/relay@^0.27.0":
+  version "0.27.0"
+  resolved "https://registry.yarnpkg.com/@kiwicom/relay/-/relay-0.27.0.tgz#565da32da366551f4bf298638b3fabef912430d6"
+  integrity sha512-62v1GuRSWB+//8J1d8JQ1iUjAKt0ZdDqeZLXiKHzTRbFczb1ljD55qEWx2dfwnJQkRmEFqmGPWRm95Pdd1ZtNA==
   dependencies:
     "@kiwicom/fetch" "^2.2.1"
     "@kiwicom/js" "^0.4.0"
@@ -5523,11 +5515,6 @@ react-is@^16.3.2, react-is@^16.6.0, react-is@^16.8.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.3.tgz#4ad8b029c2a718fc0cfc746c8d4e1b7221e5387d"
   integrity sha512-Y4rC1ZJmsxxkkPuMLwvKvlL1Zfpbcu+Bf4ZigkHup3v9EfdYhAlWAaVyA19olXq2o2mGn0w+dFKvk3pVVlYcIA==
 
-react-relay-network-modern@^2.5.1:
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/react-relay-network-modern/-/react-relay-network-modern-2.5.1.tgz#a081ae2691dbf2cfa53129cd6eb41a1e91a071aa"
-  integrity sha512-Edp9XWAWLiAntrtNmfeLZMPMcwUmTpBhAoxHCaSKcet7gWN5RS0Z2OhKpVhKg3p1qZz+VLMMvWg8eQghBe0auQ==
-
 react-relay@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-relay/-/react-relay-3.0.0.tgz#b3fe7931f812a6700e2420a853adb74156e162b9"
@@ -5769,11 +5756,6 @@ relay-runtime@3.0.0, relay-runtime@^3.0.0:
   dependencies:
     "@babel/runtime" "^7.0.0"
     fbjs "^1.0.0"
-
-relay@^0.8.0-1:
-  version "0.8.0-1"
-  resolved "https://registry.yarnpkg.com/relay/-/relay-0.8.0-1.tgz#f2b632ea1be64bbe706c9351a99b27320ee89e07"
-  integrity sha1-8rYy6hvmS75wbJNRqZsnMg7ongc=
 
 remove-trailing-separator@^1.0.1:
   version "1.1.0"

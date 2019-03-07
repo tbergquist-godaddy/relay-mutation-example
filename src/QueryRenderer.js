@@ -5,12 +5,13 @@ import {
   createEnvironment,
   createNetworkFetcher,
   QueryRenderer as OriginalQueryRenderer,
+  type GraphQLTaggedNode,
 } from '@kiwicom/relay';
 
 import token from './token';
 
 type Props = {|
-  +query: $FlowFixMe,
+  +query: GraphQLTaggedNode,
   +render: (props: Object) => React.Element<any>,
   +variables?: Object,
 |};

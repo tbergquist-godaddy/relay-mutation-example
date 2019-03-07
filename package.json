@@ -5,9 +5,9 @@
   "license": "MIT",
   "dependencies": {
     "@kiwicom/eslint-config": "^3.1.0",
-    "@kiwicom/fetch": "^2.2.0",
+    "@kiwicom/fetch": "^2.2.1",
     "@kiwicom/orbit-components": "^0.33.0",
-    "@kiwicom/relay": "^0.25.0",
+    "@kiwicom/relay": "^0.27.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.14.1",
     "flow-bin": "^0.93.0",
@@ -15,9 +15,6 @@
     "next": "^8.0.3",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-relay": "^3.0.0",
-    "react-relay-network-modern": "^2.5.1",
-    "relay": "^0.8.0-1",
     "relay-compiler": "^3.0.0",
     "styled-components": "^4.1.3"
   },
